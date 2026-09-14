@@ -1,12 +1,17 @@
 #!/usr/bin/env bash
 set -e
 
-sudo apt install -y zsh stow git curl unzip
+DOTFILES="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+sudo apt install -y zsh stow git curl unzip \
+  zsh-autosuggestions zsh-syntax-highlighting
+
 curl -s https://ohmyposh.dev/install.sh | bash -s -- -t ~/.cache/oh-my-posh
 
 mkdir -p ~/.local/share/fonts && cd ~/.local/share/fonts
 curl -LO https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip
 unzip -o JetBrainsMono.zip && rm JetBrainsMono.zip && fc-cache -f
 
-cd ~/dotfiles && stow zsh ohmyposh
+cd "$DOTFILES" && stow zsh ohmyposh
+
 chsh -s "$(which zsh)"
