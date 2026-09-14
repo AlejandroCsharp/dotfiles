@@ -1,0 +1,11 @@
+# secretos
+*.key
+*.pem
+.ssh/id_*
+*_token
+.env
+
+# cosas de la máquina, no del repo
+.zshrc.local
+*_history
+.DS_Store
