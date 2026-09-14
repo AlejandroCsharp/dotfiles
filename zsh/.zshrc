@@ -39,7 +39,7 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 #-- oh-my-posh --
 
-eval "$(oh-my-posh init zsh --config ~/.cache/oh-my-posh/themes/dracula.omp.json)"
+eval "$(oh-my-posh init zsh --config ~/dotfiles/ohmyposh/dracula.omp.json)"
 
 # -- fastfetch --
 
